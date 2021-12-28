@@ -1,8 +1,6 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 function Ticket(props){
-  const name = "Thato"; 
-  const name2 = "Haley";
   // hard coded code right here baby^^
   return (
     <React.Fragment>
@@ -13,4 +11,9 @@ function Ticket(props){
   );
 }
 
+Ticket.propTypes = {
+  name: PropTypes.string,
+  location: PropTypes.string,
+  issue: PropTypes.string
+};
 export default Ticket;
