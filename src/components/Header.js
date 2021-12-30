@@ -1,8 +1,11 @@
 import React from "react";
-
-const Header = () => {
+import ticketsImage from "./../img/tickets.jpeg";
+function Header(){
   return (
-    <h1>Help Queue</h1>
+    <React.Fragment>
+      <h1>Help Queue</h1>
+      <img src={ticketsImage} alt="An image of man falling into a void" />
+    </React.Fragment>
   );
 }
 
