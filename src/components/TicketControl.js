@@ -7,7 +7,7 @@ class TicketControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
     };
   }
 
@@ -20,11 +20,11 @@ class TicketControl extends React.Component {
   render(){  
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.formVisibleOnPage) {
+    if (this.state.NewTicketForm) {
       currentlyVisibleState = <NewTicketForm />;
       buttonText = "Return to ticket list";
     } else {
-      currentlyVisibleState = <TicketList />
+      currentlyVisibleState = <TicketList />;
       buttonText = "Add Ticket";
     }
     return (
