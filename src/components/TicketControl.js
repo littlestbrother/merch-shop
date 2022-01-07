@@ -23,12 +23,12 @@ class TicketControl extends React.Component {
     this.setState({mainTicketList: newMainTicketList,
                   formVisibleOnPage: false });
   }
-  
+
   render(){  
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.NewTicketForm) {
-      currentlyVisibleState = <NewTicketForm />;
+    if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewTicketForm onNewTicketCreation={this.handleAddingNewTicketToList}/>;
       buttonText = "Return to ticket list";
     } else {
       currentlyVisibleState = <TicketList ticketList={this.state.mainTicketList} />;//this is how we pass mainTicketList to the ticketlist where ticketList acts as the property to Ticketlist
