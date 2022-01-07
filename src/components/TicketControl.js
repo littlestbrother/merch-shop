@@ -8,7 +8,7 @@ class TicketControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainTicketList: []
+      mainTicketList: [] //this will hold all the new tickets made
     };
   }
 
@@ -25,7 +25,7 @@ class TicketControl extends React.Component {
       currentlyVisibleState = <NewTicketForm />;
       buttonText = "Return to ticket list";
     } else {
-      currentlyVisibleState = <TicketList ticketList={this.state.mainTicketList} />;
+      currentlyVisibleState = <TicketList ticketList={this.state.mainTicketList} />;//this is how we pass mainTicketList to the ticketlist where ticketList acts as the property to Ticketlist
       buttonText = "Add Ticket";
     }
     return (

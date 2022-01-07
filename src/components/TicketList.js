@@ -1,5 +1,7 @@
 import React from "react";
 import Ticket from "./Ticket";
+import PropTypes from "prop-types";
+
 const mainTicketList = [
   {
     names: 'Thato and Haly',
