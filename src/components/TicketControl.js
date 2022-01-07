@@ -28,7 +28,7 @@ class TicketControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewTicketForm onNewTicketCreation={this.handleAddingNewTicketToList}/>;
+      currentlyVisibleState = <NewTicketForm onNewTicketCreation={this.handleAddingNewTicketToList}/>;//onNewTicketCreation will be the propety of NewTicketForm object and it will be equal to the handle we created on line 21
       buttonText = "Return to ticket list";
     } else {
       currentlyVisibleState = <TicketList ticketList={this.state.mainTicketList} />;//this is how we pass mainTicketList to the ticketlist where ticketList acts as the property to Ticketlist
