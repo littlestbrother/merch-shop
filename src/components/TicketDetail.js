@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 function TicketDetail(props){
-  const { ticket, onClickingDelete} = props;//this is known as object destructuring
+  const { ticket, onClickingDelete} = props;//this is known as object destructuring. Its a way of copying whatever is in the bracketrs and setting it ewqual to teh variable so that it can be used in the component
   return (
     <React.Fragment>
       <h1>Ticket Detail</h1>
@@ -13,6 +13,7 @@ function TicketDetail(props){
   );
 }
 TicketDetail.propTypes = {
-  ticket: PropTypes.object
+  ticket: PropTypes.object,
+  onClickingDelete: PropTypes.func
 };
 export default TicketDetail;
