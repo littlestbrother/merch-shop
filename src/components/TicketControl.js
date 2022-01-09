@@ -11,7 +11,8 @@ class TicketControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       mainTicketList: [], //this will hold all the new tickets made
-      selectedTicket: null //selected ticket is null because no tickets have been selected yet
+      selectedTicket: null, //selected ticket is null because no tickets have been selected yet
+      editing: false
     };
   }
 
