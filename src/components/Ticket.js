@@ -4,9 +4,12 @@ function Ticket(props){
   // hard coded code right here baby^^
   return (
     <React.Fragment>
-      <h3>{props.location} - {props.names}</h3>
-      <p><em>{props.issue}</em></p>
-      <hr/>
+      {/* Below we use arrow notation within the div to return the id of a clicked ticket */}
+      <div onClick = {() => props.whenTicketClicked(props.id)}> 
+        <h3>{props.location} - {props.names}</h3>
+        <p><em>{props.issue}</em></p>
+        <hr/>
+      </div>
     </React.Fragment>
   );
 }
@@ -14,6 +17,8 @@ function Ticket(props){
 Ticket.propTypes = {
   name: PropTypes.string,
   location: PropTypes.string,
-  issue: PropTypes.string
+  issue: PropTypes.string,
+  id: PropTypes.string,
+  whenTicketClicked: PropTypes.func
 };
 export default Ticket;

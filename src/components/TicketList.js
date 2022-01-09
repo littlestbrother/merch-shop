@@ -9,7 +9,7 @@ function TicketList(props){
       <hr/>
         {props.ticketList.map((ticket) =>
           <Ticket 
-            whenTicketClicked = { props.onTicketSelection}
+            whenTicketClicked = { props.onTicketSelection}//TicketControl passes the handleChangingSelectedTicket method using onTicketSelction prop
 
             names={ticket.names}
             location={ticket.location}
