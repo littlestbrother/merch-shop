@@ -55,6 +55,13 @@ class TicketControl extends React.Component {
     });
     
   }
+
+  //Method that shows the edit form
+
+  handleEditClick = () => {
+    console.log("handleEditClick reached!");
+    this.setState({editing: true});
+  }
   render(){  
     let currentlyVisibleState = null;
     let buttonText = null;
