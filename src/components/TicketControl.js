@@ -3,6 +3,7 @@ import NewTicketForm from './NewTicketForm';
 import TicketList from './TicketList';
 import TicketDetail from './TicketDetail';
 import EditTicketForm from './EditTicketForm'
+import { flagsToNumber } from 'memfs/lib/volume';
 
 class TicketControl extends React.Component {
 
@@ -64,12 +65,25 @@ class TicketControl extends React.Component {
     console.log("handleEditClick reached!");
     this.setState({editing: true});
   }
+
+  handleEditingTicketInList = (ticketToEdit) => {
+    const editedMainTicketList = this.state.mainTicketList
+      .filter(ticket => ticket.id !== this.state.selectedTicket.id)//this removes the old ticket
+      .concat(ticketToEdit);//this adds the new one
+    this.setState({
+      mainTicketList: editedMainTicketList,//this updates our ticket list
+      editing: false,
+      selectedTicket: null
+    });
+
+  }
+
   render(){  
     let currentlyVisibleState = null;
     let buttonText = null;
 
     if(this.state.editing) {
-      currentlyVisibleState = <EditTicketForm ticket = {this.state.selectedTicket} />
+      currentlyVisibleState = <EditTicketForm ticket = {this.state.selectedTicket} onEditTicket = {this.handleEditingTicketInList} />
       buttonText = "Return To Ticket List"
     } else if (this.state.selectedTicket != null) {
       currentlyVisibleState = <TicketDetail ticket = {this.state.selectedTicket} onClickingDelete = {this.handleDeletingTicket} onClickingEdit = {this.handleEditClick}/>
