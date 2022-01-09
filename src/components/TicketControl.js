@@ -17,18 +17,22 @@ class TicketControl extends React.Component {
 
 
   //Custom methods
+
+  //handles toggling state
   handleClick = () => {
     this.setState(prevState => ({
       formVisibleOnPage: !prevState.formVisibleOnPage
     }));
   }
 
+  //handles adding a new tick to the mainticketlist with new ticket as a parameter
   handleAddingNewTicketToList = (newTicket) => {
     const newMainTicketList = this.state.mainTicketList.concat(newTicket);
     this.setState({mainTicketList: newMainTicketList,
                   formVisibleOnPage: false });
   }
 
+//handles setting state to a selected ticket using the id as a param
   handleChangingSelectedTicket = (id) => {
     const selectedTicket = this.state.mainTicketList.filter(ticket => ticket.id === id)[0];
     this.setState({selectedTicket: selectedTicket});
