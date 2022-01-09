@@ -1,7 +1,7 @@
 import React from 'react';
 import NewTicketForm from './NewTicketForm';
 import TicketList from './TicketList';
-
+import TicketDetail from './TicketDetail';
 class TicketControl extends React.Component {
 
   //Constructor
@@ -20,9 +20,16 @@ class TicketControl extends React.Component {
 
   //handles toggling state
   handleClick = () => {
-    this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage
-    }));
+    if(this.state.selectedTicket != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedTicket: null
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage
+      }));
+    }
   }
 
   //handles adding a new tick to the mainticketlist with new ticket as a parameter
@@ -37,7 +44,16 @@ class TicketControl extends React.Component {
     const selectedTicket = this.state.mainTicketList.filter(ticket => ticket.id === id)[0];
     this.setState({selectedTicket: selectedTicket});
   }
+//handles deleting ticket from mainticketlist
+  handleDeletingTicket = (id) => {
+    const newMainTicketList = this.state.mainTicketList.filter(ticket => ticket.id !== id);
+    this.setState({
+      mainTicketList: newMainTicketList,
+      selectedTicket: null
 
+    });
+    
+  }
   render(){  
     let currentlyVisibleState = null;
     let buttonText = null;
