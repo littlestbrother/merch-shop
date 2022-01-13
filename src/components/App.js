@@ -1,13 +1,11 @@
 import React from "react";
 import Header from "./Header";
-import TicketControl from "./TicketControl";
-function App(){
-  const name = "Thato";
-  const name2 = "Haley";
+import MerchControl from "./MerchControl";
+function App() {
   return (
     <React.Fragment>
-      <Header />  
-      <TicketControl />
+      <Header />
+      <MerchControl />
     </React.Fragment>
   );
 }

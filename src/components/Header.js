@@ -1,10 +1,11 @@
 import React from "react";
-import ticketImage from "./../img/ticket4.png";
-function Header(){
+import merchImage from "./../img/shop-keeper.png";
+function Header() {
   return (
     <React.Fragment>
-      <h1>Help Queue</h1>
-      <img src={ticketImage} alt="An image of man falling into a void" />
+      <h1>Hyrule Castle Town Shop</h1>
+      {/* eslint-disable-next-line */}
+      <img src={merchImage}/>
     </React.Fragment>
   );
 }
